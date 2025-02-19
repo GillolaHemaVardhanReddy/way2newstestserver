@@ -15,7 +15,7 @@ app.listen(port,()=>{
 })
 
 // app middleware
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'http://localhost:3001' }));
 app.use(cookieParser(process.env.COOKIE_SECRET))
 app.use(express.json())
 

@@ -10,6 +10,7 @@ export const createpostdb = async (data) => {
         console.log(chalk.white.bgYellow("Created post successfully"))
         return post;
     } catch(err) {
+        console.log(err)
         console.log(chalk.white.bgRed("Error occured at createPostdb"))
         return createError(500, "Internal server error")
     }
