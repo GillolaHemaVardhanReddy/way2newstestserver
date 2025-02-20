@@ -35,8 +35,6 @@ export const signin = async (req,res,next)=>{
             maxAge: 1000 * 60 * 60 * 24 * 10,
              signed: true,
              httpOnly:true,
-             sameSite: 'None',
-             secure: true,
              partitioned: true
             } ).status(200).json({success:true,data:remain})
     }catch(err){
