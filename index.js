@@ -15,7 +15,7 @@ app.listen(port,()=>{
 })
 
 // app middleware
-app.use(cors({ origin: 'https://way2news-test.vercel.app' }));
+app.use(cors());
 app.use(cookieParser(process.env.COOKIE_SECRET))
 app.use(express.json())
 
