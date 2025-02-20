@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import { connectToDb } from "./db/connect.db.js";
 import cookieParser from "cookie-parser";
 import postRoutes from "./routes/post.routes.js"
+import authRoutes from "./routes/auth.routes.js"
 import cors from 'cors'
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.use(express.json())
 
 // routes middleware
 app.use('/post',postRoutes)
+app.use('/auth', authRoutes)
 
 // error handler middleware
 app.use((err,req,res,next)=>{
