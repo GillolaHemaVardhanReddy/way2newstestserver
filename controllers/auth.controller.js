@@ -36,6 +36,7 @@ export const signin = async (req,res,next)=>{
              signed: true,
              httpOnly:true,
              sameSite: 'None',
+             secure: true,
              partitioned: true
             } ).status(200).json({success:true,data:remain})
     }catch(err){
