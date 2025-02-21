@@ -35,7 +35,6 @@ export const signin = async (req,res,next)=>{
             maxAge: 1000 * 60 * 60 * 24 * 10,
              signed: true,
              httpOnly:true,
-             sameSite: 'Lax'
             } ).status(200).json({success:true,data:remain})
     }catch(err){
         console.log(chalk.red.bgWhite('error in signin controller: ',err.message))
@@ -47,7 +46,7 @@ export const signin = async (req,res,next)=>{
 export const signout = async (req,res,next)=>{
     try{
         console.log(chalk.blue.bgWhite('Entered signout controller'))
-        res.clearCookie('auth', { maxAge: 0 })
+        res.clearCookie('auth', { maxAge: 0, path:'/' })
         console.log(chalk.green.bgWhite('cleared all rules successfully and logged out successfully'))
         res.status(200).json({
             success: true,
